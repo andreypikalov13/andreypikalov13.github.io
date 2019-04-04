@@ -1,0 +1,30 @@
+turnProgram = [
+	{"approach0":1,
+	 "approach1":2,
+	 "approach2":1,
+	 "secun0":30,
+	 "secun1":30,
+	 "secun2":30
+	},
+	{"approach0":2,
+	 "approach1":3,
+	 "approach2":2,
+	 "secun0":30,
+	 "secun1":30,
+	 "secun2":30
+	},
+	{"approach0":3,
+	 "approach1":5,
+	 "approach2":4,
+	 "secun0":30,
+	 "secun1":30,
+	 "secun2":30
+	},
+	{"approach0":6,
+	 "approach1":4,
+	 "approach2":7,
+	 "secun0":30,
+	 "secun1":30,
+	 "secun2":30
+	}
+]

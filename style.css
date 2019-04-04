@@ -1,0 +1,157 @@
+*{ 
+	margin:0; padding:0;
+}
+
+ body{
+ width:100%; 
+ font-size:6vw; 
+}
+
+#lines{ 
+    border-bottom: 17px double black; 
+    border-top: 6px solid black; 
+    content:"";
+    height: 5px; 
+    width:30px;
+}
+.header{
+
+font-size:110%; 
+padding:25px 0 25px 0; 
+background:#32CD32;
+width:100%;
+text-align:center; 
+color:white; 
+position:fixed;  
+top:0; 
+}
+.index_text{
+
+}
+.nav {
+	position:fixed;
+	top:20px; 
+	width:10%; 
+	left:10px; 
+	display:flex; 
+	justify-content: flex-start;  
+	font-size:230%;  
+	flex-direction:column;   
+}
+.container{
+	 margin-top:17%; 
+	text-align:center; 
+	color:blue;
+}
+.play{
+	
+
+max-width: 100%;
+height: auto;
+}
+.play img{
+	
+width: 48%;
+max-width: 48%;
+height: auto;
+
+}
+.play img:active{
+	border-radius:100%; 
+	 box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.nav span{ 
+	margin-top:12px;   
+	width:80%;
+	height:10px;
+	background:white;   
+}
+.infoblock1, .infoblock2{
+	display:flex;
+
+	justify-content:space-around;
+	flex-grow:1;  
+	align-items:center; 
+	width:100%; 
+	margin-top:10%; 
+	height:40%;
+	background-color:#32CD32; 
+}
+.infoblock{
+	position:absolute;
+	margin-top:14%; 
+	top:66%;
+	left:50%; 
+	transform:translate(-50%,-50%); 
+	width:80%;
+	height:700px;  
+	text-align:center; 
+	display:flex; 
+	justify-content: flex-start; 
+	flex-direction:column;  
+}
+.infoblock button{
+	width:120px;
+	height:100px;  
+	background:#ffc90e;
+	color:white;
+	font-size:4vw;   
+}
+.infoblock2 span{
+	width:120px;
+	height:100px;  
+	background:#ffc90e;
+	color:white;
+  	align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+}
+.timer{
+
+	width:4em;
+	
+	position:absolute;
+	top:27%;
+	left:50%; 
+	transform:translate(-50%,-50%);    
+	background:#ffc90e;
+	color:white;
+  	align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    padding:50px;
+    font-size:15vw; 
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+} 
+@media screen and (max-device-width: 330px) {
+	.play img{
+	width: 48%;
+	max-width: 48%;
+	height: auto;
+	}
+	.container{
+		margin-top:16%; 
+	}
+}
+@media screen and (max-width: 330px) {
+    .play img{
+	width: 48%;
+	max-width: 48%;
+	height: auto;
+	}
+	.container{
+		margin-top:16%; 
+	}
+}
+
+
+
