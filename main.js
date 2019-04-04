@@ -1,4 +1,4 @@
-alert(1);
+
 window.addEventListener('DOMContentLoaded',()=>{
 
 	
