@@ -23,9 +23,7 @@ var cached_urls = [
   './images/play.img',
 ];
 
-The install event fires when the service worker is first installed.
-   You can use this event to prepare the service worker to be able to serve
-   files while visitors are offline.
+
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(cache_name)
