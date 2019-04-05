@@ -3,10 +3,10 @@
 var config = {
   version: 'achilles',
   staticCacheItems: [
-   './',
-  './index.html',
-  './style.css',
-  './main.js'
+   '/',
+  '/index.html',
+  '/style.css',
+  '/main.js'
   
   ],
   cachePathPattern: /^\/(?:(20[0-9]{2}|about|blog|css|images|js)\/(.+)?)?$/,
