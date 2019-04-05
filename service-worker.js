@@ -25,7 +25,7 @@
 'use strict';
 
 
-
+console.log(1);
 
 
 /* eslint-disable quotes, comma-spacing */
