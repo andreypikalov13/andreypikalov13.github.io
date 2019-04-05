@@ -12,14 +12,14 @@ var version = 'v1::';
    then the service worker won't be installed either.
 */
 var offlineFundamentals = [
-  '',
-  'index.html',
-  'style.css',
-  'data.json',
-  'main.js',
-  'sound/end.mp3',
-  'sound/timer.mp3',
-  'images/play.img',
+  './',
+  './index.html',
+  './style.css',
+  './data.json',
+  './main.js',
+  './sound/end.mp3',
+  './sound/timer.mp3',
+  './images/play.img',
 ];
 
 /* The install event fires when the service worker is first installed.
