@@ -2,7 +2,7 @@
 window.addEventListener('DOMContentLoaded',()=>{
 
 	
-if ("serviceWorker" in navigator) {
+/*if ("serviceWorker" in navigator) {
   if (navigator.serviceWorker.controller) {
     console.log("[PWA Builder] active service worker found, no need to register");
   } else {
@@ -16,7 +16,7 @@ if ("serviceWorker" in navigator) {
 } 
 //fg
 
-
+*/
 	var buttonChange = document.querySelectorAll('.program'),
 infoblock = document.querySelectorAll('.info > span'),
 buttonPlay = document.querySelector('.play');
