@@ -6,11 +6,8 @@ var config = {
    './',
   './index.html',
   './style.css',
-  './data.json',
-  './main.js',
-  './sound/end.mp3',
-  './sound/timer.mp3',
-  './images/play.img',
+  './main.js'
+  
   ],
   cachePathPattern: /^\/(?:(20[0-9]{2}|about|blog|css|images|js)\/(.+)?)?$/,
   offlineImage: '<svg role="img" aria-labelledby="offline-title"'
