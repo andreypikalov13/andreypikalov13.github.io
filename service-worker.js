@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 'use strict';
 
 var config = {
@@ -31,6 +21,10 @@ var config = {
     + '<tspan x="93" y="172">offline</tspan></text></g></svg>',
   offlinePage: '/offline/'
 };
+
+function cacheName (key, opts) {
+  return `${opts.version}-${key}`;
+}
 
 function addToCache (cacheKey, request, response) {
   if (response.ok) {
@@ -64,19 +58,30 @@ function offlineResponse (resourceType, opts) {
 
 self.addEventListener('install', event => {
   function onInstall (event, opts) {
-    return caches.open('static')
-      .then(cache =>
-        cache.addAll(opts.staticCacheItems)
-      );
+    var cacheKey = cacheName('static', opts);
+    return caches.open(cacheKey)
+      .then(cache => cache.addAll(opts.staticCacheItems));
   }
 
   event.waitUntil(
-    onInstall(event, config)
+    onInstall(event, config).then( () => self.skipWaiting() )
   );
 });
 
 self.addEventListener('activate', event => {
+  function onActivate (event, opts) {
+    return caches.keys()
+      .then(cacheKeys => {
+        var oldCacheKeys = cacheKeys.filter(key => key.indexOf(opts.version) !== 0);
+        var deletePromises = oldCacheKeys.map(oldKey => caches.delete(oldKey));
+        return Promise.all(deletePromises);
+      });
+  }
 
+  event.waitUntil(
+    onActivate(event, config)
+      .then( () => self.clients.claim() )
+  );
 });
 
 self.addEventListener('fetch', event => {
@@ -85,7 +90,7 @@ self.addEventListener('fetch', event => {
     var request            = event.request;
     var url                = new URL(request.url);
     var criteria           = {
-      matchesPathPattern: !!(opts.cachePathPattern.exec(url.pathname),
+      matchesPathPattern: opts.cachePathPattern.test(url.pathname),
       isGETRequest      : request.method === 'GET',
       isFromMyOrigin    : url.origin === self.location.origin
     };
@@ -106,7 +111,7 @@ self.addEventListener('fetch', event => {
       resourceType = 'image';
     }
 
-    cacheKey = resourceType;
+    cacheKey = cacheName(resourceType, opts);
 
     if (resourceType === 'content') {
       event.respondWith(
@@ -124,8 +129,8 @@ self.addEventListener('fetch', event => {
       );
     }
   }
-
   if (shouldHandleFetch(event, config)) {
     onFetch(event, config);
   }
+
 });
