@@ -17,7 +17,9 @@ window.addEventListener('DOMContentLoaded',()=>{
 //fg
 
 */
- 
+ UpUp.start({
+      'content-url': 'index.html' // show this page to offline users
+    });
 
 	var buttonChange = document.querySelectorAll('.program'),
 infoblock = document.querySelectorAll('.info > span'),
