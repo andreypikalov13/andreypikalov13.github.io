@@ -95,7 +95,7 @@ function play() {
 		
 			
 			buttonPlay.innerHTML = `<img src="images/play.png" alt="play">`;
-			if (blockIndex==2) {buttonPlay.innerHTML=`<p>You win!</p>`}
+			if (blockIndex==3) {buttonPlay.innerHTML=`<p>You win!</p>`}
 			clearInterval(timeInterval);
 			
 			
