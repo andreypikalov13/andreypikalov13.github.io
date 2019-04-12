@@ -18,7 +18,8 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 */
  UpUp.start({
-      'content-url': 'index.html' // show this page to offline users
+      'content-url': 'index.html', // show this page to offline users
+      'assets': ['style.css', 'main.js','manifest.json','sound/end.mp3','sound/timer.mp3','images/play.img']
     });
 
 	var buttonChange = document.querySelectorAll('.program'),
